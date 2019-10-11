@@ -1,0 +1,27 @@
+.b {
+  border: 0px solid black;
+}
+.liste {
+  width: 1000px;
+  margin: auto;
+  background: rgb(243, 241, 241);
+}
+.produit {
+  width: 25%;
+  float: left;
+  box-sizing: border-box;
+  padding: 16px 10px;
+  margin-bottom: 16px;
+}
+.tof img {
+  width: 100%;
+}
+.info {
+  padding: 10px;
+  text-align: center;
+  background: #fff;
+  color: gray;
+}
+.n {
+  clear: both;
+}
