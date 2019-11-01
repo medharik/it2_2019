@@ -12,7 +12,6 @@ function calculer() {
   } else {
     let total = prix * qte;
     div_resultat.style.color = "blue";
-
     div_resultat.innerHTML = "le total est " + total + "DHS";
   }
 
