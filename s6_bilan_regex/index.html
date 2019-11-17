@@ -11,14 +11,34 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!--.container>.row>.col-md-6*2 -->
-    <div class="container">
+    <div class="container-fluid ">
       <div class="row">
-        <div class="col-md-6 shadow p-2 mt-3">
+        <div class="col-md-12 d-flex p-0" id="banner">
+          <div
+            class="d-flex"
+            style="width: 100%;background: rgba(0, 0, 0, 0.4);"
+          >
+            <div class="m-auto text-center">
+              <h5 class="text-white">
+                Pour toute information veuillez nous contacter ou demander un
+                devis
+              </h5>
+              <a href="#" class="btn btn-danger">Demander un devis</a>
+              <a href="#" class="btn btn-info">Nous-Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3 class="text-primary my-3 text-center">Nous-Contacter :</h3>
+
+      <div class="row p-2 mt-3 shadow">
+        <div class="col-md-6  ">
           <div class="alert alert-danger"></div>
-          <form>
+          <form action="http://google.fr">
             <div class="form-group">
               <!-- label+input.form-control-->
               <label for="cin">Cin</label>
@@ -34,7 +54,27 @@
             <button type="button" class="btn btn-primary">Valider</button>
           </form>
         </div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6 itsup  bg-light ">
+          <h5>Adresse :</h5>
+          <p>66 Boulevard du 11 Janvier - Casablanca</p>
+          <h5>Tel :</h5>
+          <p>0522 37 36 38</p>
+          <h5>Email :</h5>
+          <p>contact@itsup.ma</p>
+        </div>
+      </div>
+      <h3 class="text-primary my-3 text-center">COORDONEES :</h3>
+      <div class="row shadow">
+        <div class="col-md-12 mt-5">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.5843959572653!2d-7.614331099999983!3d33.59013850000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7d29c2a7bd9ef%3A0x76295faa35e7683c!2sITSUP!5e0!3m2!1sfr!2sma!4v1574001037561!5m2!1sfr!2sma"
+            width="100%"
+            height="450"
+            frameborder="0"
+            style="border:0;"
+            allowfullscreen=""
+          ></iframe>
+        </div>
       </div>
     </div>
     <script
@@ -85,6 +125,30 @@
           $(this)
             .next("small")
             .html("");
+        }
+      });
+      $(document).on("keyup", "#email", function() {
+        var modelEmail = /^[a-z]{4,}[0-9_]{0,}@itusp.ma$/;
+        if (!modelEmail.test($(this).val())) {
+          $(this)
+            .next("small")
+            .html("Email incorrect");
+        } else {
+          $(this)
+            .next("small")
+            .html("");
+        }
+      });
+      $(document).on("click", "button", function() {
+        $("input").keyup();
+        var erreur = false;
+        $("small").each(function() {
+          if ($(this).text() != "") {
+            erreur = true;
+          }
+        });
+        if (erreur == false) {
+          $("form").submit();
         }
       });
     </script>

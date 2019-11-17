@@ -1,0 +1,16 @@
+@media screen and (min-width: 200px) and (max-width: 640px) {
+  .itsup {
+    display: none;
+  }
+}
+
+@media print {
+  button {
+    display: none !important;
+  }
+}
+
+#banner {
+  background: black url("image37.jpg") no-repeat fixed;
+  height: 400px;
+}
